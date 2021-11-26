@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { codeChallenge, codeVerifier } from '../codeCV/index'
+import { codeChallenge, codeVerifier } from '../../lib/codeCV/index'
 
 const Home = () => {
     function authButton() {
