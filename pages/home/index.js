@@ -4,7 +4,7 @@ import { codeChallenge, codeVerifier } from '../../lib/codeCV/index'
 const Home = () => {
     function authButton() {
         if (typeof window !== "undefined") {
-            window.location = `https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&code_challenge=${codeChallenge}`
+            window.location = `https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=${process.env.CLIENT_ID}&code_challenge=${codeChallenge}`
           }
     }
 
@@ -17,8 +17,8 @@ const Home = () => {
         }      
         
         const tokenReqestData = { 
-            'client_id': process.env.NEXT_PUBLIC_CLIENT_ID,
-            'client_secret': process.env.NEXT_PUBLIC_CLIENT_SECRET,
+            'client_id': process.env.CLIENT_ID,
+            'client_secret': process.env.CLIENT_SECRET,
             'grant_type': 'authorization_code',
             code,
             'code_verifier': codeVerifier
